@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Imágenes</title>
+    <!-- Incluye la librería jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Botón para cambiar las imágenes -->
+    <button id="cambiarImagen">Cambiar Imagen</button>
+    <!-- Contenedor para mostrar las imágenes -->
+    <div id="imagenContainer">
+        <img src="imagen1.jpg" alt="Imagen 1" id="imagen">
+    </div>
+
+    <script>
+        // Definimos las rutas de las imágenes
+        var img1Src = 'https://th.bing.com/th/id/OIP.AgB4fxyW5fZVvjfMChtjDAHaKF?rs=1&pid=ImgDetMain';
+        var img2Src = 'https://2.bp.blogspot.com/-9HNK4gCnNKc/T6dI24QjcGI/AAAAAAAABjo/MfmVzpVVl3E/s1660/naruto-shippuden.jpg';
+        var img3Src = 'https://media.licdn.com/dms/image/C4D03AQFs31wcWT_w3w/profile-displayphoto-shrink_800_800/0/1622726537444?e=2147483647&v=beta&t=JFWw8w6Ybk7ZHXhdSNSSaisSncIb4PT3D6COJpsFqHI';
+
+        // Variable para llevar el control de la imagen actual
+        var currentImage = 1;
+
+        // Función para cambiar la imagen al hacer clic en el botón
+        $('#cambiarImagen').click(function() {
+            // Cambiamos la imagen actual
+            if (currentImage === 1) {
+                $('#imagen').attr('src', img2Src);
+                currentImage = 2;
+            } else if (currentImage === 2) {
+                $('#imagen').attr('src', img3Src);
+                currentImage = 3;
+            } else {
+                $('#imagen').attr('src', img1Src);
+                currentImage = 1;
+            }
+        });
+    </script>
+    <input type="text" id="miTexto" placeholder="Introduce un texto">
+    <button onclick="mostrarValorthis()">Mostrar valor de this</button>
+
+    <script>
+        function mostrarValorthis() {
+            const texto = document.getElementById("miTexto").value;
+           alert(`El valor de 'this' es: ${texto}!`);
+        }
+    </script>
+</body>
+</html>
